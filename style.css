@@ -1,0 +1,165 @@
+/* CSS Reset and Variables */
+:root {
+    --primary-color: #0d4e6b; /* Dark Teal from image reference */
+    --secondary-color: #136a8e; /* Lighter Teal */
+    --accent-color: #ffffff;
+    --text-color: #333333;
+    --bg-color: #f4f7f6;
+    --sidebar-width: 260px;
+    --transition-speed: 0.3s;
+    --font-family: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Layout */
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--accent-color);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(5px);
+}
+
+.nav-btn.active {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: var(--primary-color);
+    color: var(--accent-color);
+    padding: 4rem 6rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(13, 78, 107, 0.3);
+    max-width: 800px;
+    width: 100%;
+}
+
+.welcome-banner h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.welcome-banner p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Content Sections (Dynamic) */
+.content-section {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

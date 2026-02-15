@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - Silver Parakeet</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-target="home">
+                    <span class="icon">🏠</span> Inicio
+                </button>
+                <button class="nav-btn" data-target="datos">
+                    <span class="icon">📊</span> Datos
+                </button>
+                <button class="nav-btn" data-target="proximamente">
+                    <span class="icon">🚀</span> Próximamente
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main-content">
+            <!-- Content will be injected here by JavaScript -->
+            <div class="welcome-banner fade-in">
+                <h1>BIENVENIDO</h1>
+                <p>Explora las opciones en el menú lateral.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
