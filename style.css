@@ -1,10 +1,16 @@
 /* CSS Reset and Variables */
 :root {
-    --primary-color: #0d4e6b; /* Dark Teal from image reference */
-    --secondary-color: #136a8e; /* Lighter Teal */
+    --primary-color: #0d4e6b;
+    /* Dark Teal */
+    --secondary-color: #136a8e;
+    /* Lighter Teal */
     --accent-color: #ffffff;
     --text-color: #333333;
     --bg-color: #f4f7f6;
+    --card-bg-color: #7cb342;
+    /* Green from reference image */
+    --card-item-bg: #1e607d;
+    /* Dark Blue for items inside card */
     --sidebar-width: 260px;
     --transition-speed: 0.3s;
     --font-family: 'Outfit', sans-serif;
@@ -98,8 +104,9 @@ body {
     padding: 3rem;
     overflow-y: auto;
     display: flex;
+    flex-direction: column;
+    /* Changed to column to handle scroll better */
     align-items: center;
-    justify-content: center;
     background-color: var(--bg-color);
     position: relative;
 }
@@ -114,6 +121,9 @@ body {
     box-shadow: 0 10px 30px rgba(13, 78, 107, 0.3);
     max-width: 800px;
     width: 100%;
+    margin-top: auto;
+    /* Center vertically if flex direction is column */
+    margin-bottom: auto;
 }
 
 .welcome-banner h1 {
@@ -132,19 +142,80 @@ body {
 /* Content Sections (Dynamic) */
 .content-section {
     width: 100%;
-    max-width: 900px;
-    background: white;
+    max-width: 1200px;
+    /* Increased max-width for grid */
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .content-section h2 {
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
-    border-bottom: 2px solid var(--bg-color);
+    border-bottom: 2px solid #ccc;
     padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* Data Grid Styles */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.data-card {
+    background-color: var(--card-bg-color);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    border: 2px solid #689f38;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    justify-items: stretch;
+}
+
+/* Specific layout for the 5 items */
+.card-item {
+    background-color: var(--card-item-bg);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-item small {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+/* First item spans full width (Top rectangle in reference) */
+.card-item:nth-child(1) {
+    grid-column: span 2;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #0d4e6b;
+    /* Slightly darker header */
 }
 
 /* Animations */
@@ -158,6 +229,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
