@@ -1,5 +1,3 @@
-<pre>
-
 ```mermaid
 flowchart TD
     Dev[💻 Developer Local] -- Push PR --&gt; Feat([Branch: feat/xyz])
@@ -10,5 +8,3 @@ flowchart TD
     ProdReady -- Git Tag v1.2.0 --&gt; Prod[🟢 Production Environment]
 
 ```
-
-</pre>
