@@ -2,6 +2,10 @@
 
 ### Arquitectura de Ramas y Entornos
 
+<table>
+  <tr>
+    <td width="50%">
+
 ```mermaid
 flowchart TD
     Dev[💻 Developer Local] -->|Push PR| Feat([Branch: feat/xyz])
@@ -10,17 +14,23 @@ flowchart TD
     Main -->|Auto Deploy| Stg[🟠 Staging Environment]
     Stg -->|Test Manual OK| ProdReady{🚀 Listo para Prod?}
     ProdReady -->|Git Tag v1.2.0| Prod[🟢 Production Environment]
+
 ```
 
-1.  **Local**: Tu entorno de desarrollo.
-2.  **Pull Request (PR)**: Validación de código obligatoria.
-3.  **Main**: La verdad absoluta del código.
-4.  **Staging**: Copia fiel de producción para pruebas finales (se actualiza con cada merge a main).
-5.  **Production**: Donde viven los usuarios (se actualiza solo al crear un Tag).
+</td>
+<td width="50%">
+
+
+1. **Local**: Tu entorno de desarrollo.
+2. **Pull Request (PR)**: Validación de código obligatoria.
+3. **Main**: La verdad absoluta del código.
+4. **Staging**: Copia fiel de producción para pruebas finales (se actualiza con cada merge a main).
+5. **Production**: Donde viven los usuarios (se actualiza solo al crear un Tag).
+</td>
+
+</tr>
+</table>
 
 ---
-
-## 3. Tipos de Ramas y Ciclo de Vida
-En Lead UPN, las ramas son efímeras.
 
 
