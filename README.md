@@ -7,7 +7,7 @@
     <td width="50%">
 
 ```mermaid
-flowchart TD
+flowchart LR
     Dev[💻 Developer Local] -->|Push PR| Feat([Branch: feat/xyz])
     Feat -->|Code Review + CI| Appr{✅ Aprobado?}
     Appr -->|Merge| Main[🛡️ Main Branch]
